@@ -10,7 +10,7 @@ class Listbook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: getProportionateScreenWidth(270),
+      height: getProportionateScreenHeight(270),
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           // padding: EdgeInsets.only(left: 4),

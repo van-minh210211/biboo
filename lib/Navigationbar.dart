@@ -25,13 +25,14 @@ class _BottomState extends State<Bottom> {
     return Scaffold(
       body: _widgetOptions[selec],
       bottomNavigationBar: SizedBox(
-        height: 86,
+        height: 80,
         child: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             selectedLabelStyle: TextStyle(fontFamily: "Regular"),
             unselectedLabelStyle: TextStyle(fontFamily: "Regular"),
             unselectedFontSize: 13,
             selectedFontSize: 13,
+            backgroundColor: Color(0xffFCFCFC),
             currentIndex: selec,
             selectedItemColor: Color(0xff3D40C6),
             onTap: (index) => setState(() => selec = index),

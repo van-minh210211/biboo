@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:biboo/UI/Detail/Detail.dart';
 import 'package:biboo/size_config.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -21,9 +22,9 @@ class _CustombookState extends State<Custombook> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: getProportionateScreenWidth(24)!),
-      width: getProportionateScreenWidth(130),
-      height: getProportionateScreenWidth(200),
+      margin: EdgeInsets.only(right: getProportionateScreenHeight(24)!),
+      width: getProportionateScreenHeight(128),
+      height: getProportionateScreenHeight(195),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
       ),
@@ -31,13 +32,19 @@ class _CustombookState extends State<Custombook> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: CachedNetworkImage(
-                imageUrl:
-                    "https://i2.wp.com/media.designs.vn/public/media/media/picture/30-07-2013/bia_sach_dep_thiet_ke_bia_sach_34.jpg",
-                // width: double.infinity,
-                // fit: BoxFit.cover,
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Detail()));
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: CachedNetworkImage(
+                  imageUrl:
+                      "https://i2.wp.com/media.designs.vn/public/media/media/picture/30-07-2013/bia_sach_dep_thiet_ke_bia_sach_34.jpg",
+                  // width: double.infinity,
+                  // fit: BoxFit.cover,
+                ),
               ),
             ),
             SizedBox(
@@ -55,7 +62,7 @@ class _CustombookState extends State<Custombook> {
                 fontStyle: FontStyle.normal,
                 letterSpacing: 0.75,
               ),
-              textScaleFactor: 1.3,
+
               // textAlign: TextAlign.center,
               maxLines: 2,
               // style: McFont.textXSmallBold.ash,
@@ -73,7 +80,7 @@ class _CustombookState extends State<Custombook> {
                   letterSpacing: 0.25,
                   color: Color(0xffA0A3BD)),
               // textAlign: TextAlign.center,
-              textScaleFactor: 1.3,
+
               maxLines: 1,
               // style: McFont.textXSmallBold.ash,
             ),

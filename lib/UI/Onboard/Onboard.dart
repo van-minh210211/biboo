@@ -31,7 +31,7 @@ class _DemoAppState extends State<DemoApp> {
               children: [
                 Image.asset(
                   'assets/image/onboard.png',
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 ),
                 Stack(
                   fit: StackFit.expand,

@@ -14,8 +14,8 @@ class _SearchbookState extends State<Searchbook> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: getProportionateScreenWidth(327),
-      height: getProportionateScreenWidth(40),
+      width: getProportionateScreenHeight(327),
+      height: getProportionateScreenHeight(40),
       // margin: EdgeInsets.only(left: 24, right: 24.5),
       padding: EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
@@ -27,11 +27,11 @@ class _SearchbookState extends State<Searchbook> {
               hintText: "Tìm kiếm sách",
               hintStyle: TextStyle(
                   fontFamily: 'Regular',
-                  fontSize: getProportionateScreenWidth(17),
+                  fontSize: 17,
                   color: Color(0xff6E7191)),
               icon: Assets.icons.search.svg(
-                  width: getProportionateScreenWidth(16),
-                  height: getProportionateScreenWidth(16)),
+                  width: getProportionateScreenHeight(16),
+                  height: getProportionateScreenHeight(16)),
               border: InputBorder.none),
         ),
       ),

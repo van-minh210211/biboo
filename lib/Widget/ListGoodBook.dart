@@ -1,3 +1,4 @@
+import 'package:biboo/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class ListGoodbook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 310,
+      height: getProportionateScreenHeight(310),
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: 5,

@@ -10,8 +10,8 @@ class CustomListGoodBook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: getProportionateScreenWidth(24)!),
-      width: getProportionateScreenWidth(130),
+      margin: EdgeInsets.only(right: 24),
+      width: getProportionateScreenHeight(130),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -34,7 +34,7 @@ class CustomListGoodBook extends StatelessWidget {
             textAlign: TextAlign.start,
             style: TextStyle(
               fontFamily: "Bold",
-              fontSize: 18,
+              fontSize: 15,
               color: Color(0xff262338),
               fontWeight: FontWeight.w700,
               letterSpacing: 0.75,

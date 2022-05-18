@@ -75,7 +75,9 @@ class _LoginBizbookState extends State<LoginBizbook> {
                     child: Container(
                       height: getProportionateScreenWidth(450),
                       width: getProportionateScreenWidth(355),
-                      margin: EdgeInsets.only(left: 10, right: 10),
+                      margin: EdgeInsets.only(
+                          left: getProportionateScreenWidth(10)!,
+                          right: getProportionateScreenWidth(10)!),
                       decoration: BoxDecoration(
                         color: Color(0xffFFFFFF),
                         borderRadius: BorderRadius.circular(24),
