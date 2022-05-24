@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biboo/UI/Login/Registration.dart';
 import 'package:biboo/Widget/BackgroupImage.dart';
 import 'package:biboo/UI/Login/LoginBizbook.dart';
@@ -32,8 +33,7 @@ class _LoginpageState extends State<Loginpage> {
                   Container(
                     padding: EdgeInsets.all(20),
                     child: Container(
-                      margin: EdgeInsets.only(
-                          top: getProportionateScreenWidth(22)!),
+                      margin: EdgeInsets.only(top: 22),
                       child: Row(
                         children: [
                           Expanded(
@@ -95,13 +95,10 @@ class _LoginpageState extends State<Loginpage> {
                   InkWell(
                     onTap: () {},
                     child: Container(
-                      width: getProportionateScreenWidth(303),
+                      width: double.infinity,
                       height: getProportionateScreenWidth(56),
-                      margin: EdgeInsets.only(
-                          bottom: getProportionateScreenWidth(16)!),
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(
-                          horizontal: getProportionateScreenWidth(24)!),
+                      margin: EdgeInsets.only(bottom: 16, left: 36, right: 36),
+                      padding: const EdgeInsets.only(left: 20),
                       decoration: BoxDecoration(
                         color: Color(0xff4666D5),
                         borderRadius: BorderRadius.circular(40),
@@ -110,32 +107,31 @@ class _LoginpageState extends State<Loginpage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(
-                                right: getProportionateScreenWidth(16)!),
+                            padding: EdgeInsets.only(right: 12),
                             child: Assets.icons.icFacebook.svg(),
                           ),
-                          Text(
-                            TextString.facebook,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: "Bold",
-                                fontSize: 18.4,
-                                letterSpacing: 0.75,
-                                fontWeight: FontWeight.w700,
-                                color: Color(0xffF7F7FC)),
+                          Center(
+                            child: AutoSizeText(
+                              TextString.facebook,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontFamily: "Bold",
+                                  fontSize: 15,
+                                  letterSpacing: 0.75,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color(0xffF7F7FC)),
+                            ),
                           )
                         ],
                       ),
                     ),
                   ),
                   Container(
-                    width: getProportionateScreenWidth(303),
+                    width: double.infinity,
                     height: getProportionateScreenWidth(56),
-                    margin: EdgeInsets.only(bottom: 16),
+                    margin: EdgeInsets.only(left: 36, right: 36, bottom: 16),
                     alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: getProportionateScreenWidth(27)!,
-                    ),
+                    padding: const EdgeInsets.only(left: 20),
                     decoration: BoxDecoration(
                       color: Color(0xffEFF0F7),
                       borderRadius: BorderRadius.circular(40),
@@ -144,8 +140,7 @@ class _LoginpageState extends State<Loginpage> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(
-                              right: getProportionateScreenWidth(16)!),
+                          padding: EdgeInsets.only(right: 12),
                           child: Assets.icons.icGoogle.svg(),
                         ),
                         Text(
@@ -153,7 +148,7 @@ class _LoginpageState extends State<Loginpage> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontFamily: "Bold",
-                              fontSize: 18.4,
+                              fontSize: 15,
                               letterSpacing: 0.75,
                               fontWeight: FontWeight.w700,
                               color: Color(0xff4E4B66)),
@@ -162,13 +157,11 @@ class _LoginpageState extends State<Loginpage> {
                     ),
                   ),
                   Container(
-                    width: getProportionateScreenWidth(303),
+                    width: double.infinity,
                     height: getProportionateScreenWidth(56),
-                    margin: EdgeInsets.only(bottom: 80),
+                    margin: EdgeInsets.only(bottom: 80, left: 36, right: 36),
                     alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: getProportionateScreenWidth(24)!,
-                    ),
+                    padding: const EdgeInsets.only(left: 20),
                     decoration: BoxDecoration(
                       color: Color(0xffFFFFFF),
                       borderRadius: BorderRadius.circular(40),
@@ -177,8 +170,7 @@ class _LoginpageState extends State<Loginpage> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(
-                              right: getProportionateScreenWidth(14)!),
+                          padding: EdgeInsets.only(right: 12),
                           child: Assets.icons.icApple.svg(
                               height: getProportionateScreenWidth(26),
                               width: getProportionateScreenWidth(26)),
@@ -190,7 +182,7 @@ class _LoginpageState extends State<Loginpage> {
                               fontFamily: "Bold",
                               letterSpacing: 0.75,
                               fontWeight: FontWeight.w700,
-                              fontSize: 18.4,
+                              fontSize: 15,
                               color: Color(0xff4E4B66)),
                         )
                       ],
@@ -207,13 +199,13 @@ class _LoginpageState extends State<Loginpage> {
                               builder: (context) => LoginBizbook()));
                     },
                     child: Container(
-                      width: getProportionateScreenWidth(303),
+                      width: double.infinity,
                       height: getProportionateScreenWidth(56),
-                      // margin: const EdgeInsets.only(bottom: 16),
+                      margin: const EdgeInsets.only(left: 36, right: 36),
                       alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: getProportionateScreenWidth(22)!,
-                      ),
+                      // padding: EdgeInsets.symmetric(
+                      //   horizontal: getProportionateScreenWidth(22)!,
+                      // ),
                       decoration: BoxDecoration(
                         color: Color(0xff3D40C6),
                         borderRadius: BorderRadius.circular(40),
@@ -226,7 +218,7 @@ class _LoginpageState extends State<Loginpage> {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 color: Color(0xffFCFCFC),
-                                fontSize: 18,
+                                fontSize: 15,
                                 letterSpacing: 0.75,
                                 fontWeight: FontWeight.w700,
                                 fontFamily: "Bold"),
@@ -278,6 +270,9 @@ class _LoginpageState extends State<Loginpage> {
                             fontFamily: 'SemiBold'),
                       )
                     ],
+                  ),
+                  SizedBox(
+                    height: 30,
                   )
                 ],
               ),

@@ -63,7 +63,8 @@ class _SelectionState extends State<Selection> {
             Expanded(
               child: GridView.count(
                   crossAxisCount: 3,
-                  padding: EdgeInsets.all(9),
+                  childAspectRatio: 0.8,
+                  padding: EdgeInsets.all(4),
                   children: List.generate(
                       data.length,
                       (index) => ListSelection(
@@ -77,7 +78,7 @@ class _SelectionState extends State<Selection> {
               },
               child: Container(
                 height: getProportionateScreenWidth(56),
-                width: getProportionateScreenWidth(323),
+                width: double.infinity,
                 // margin: const EdgeInsets.only(bottom: 25),
                 alignment: Alignment.center,
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
@@ -125,16 +126,16 @@ class ListSelection extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 52,
-            height: 52,
+            width: getProportionateScreenHeight(52),
+            height: getProportionateScreenHeight(52),
             child: SvgPicture.asset(theme1.Imagee),
             // child: Assets.icons.iconl.svg(),
           ),
           SizedBox(
             height: 31,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+          SizedBox(
+            width: 96,
             child: Text(
               theme1.Title,
               textAlign: TextAlign.center,

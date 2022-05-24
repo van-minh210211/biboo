@@ -6,6 +6,7 @@ import 'package:biboo/UI/Onboard/Onboard.dart';
 import 'package:biboo/onboarding/onboarding.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
 
@@ -17,30 +18,27 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     // TODO: implement initState
-    Timer(Duration(seconds: 3),() => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> DemoApp ()
-    )));
+    Timer(
+        Duration(seconds: 3),
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => Loginpage())));
   }
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Container(
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end:  Alignment.bottomRight,
-            colors: [
-              Colors.blueAccent,
-              Colors.purpleAccent
-            ]
-          )
-        ),
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.blueAccent, Colors.purpleAccent])),
         child: Stack(
           children: [
             Center(
-              child:  Image.asset("assets/image/BGBook.png"),
+              child: Image.asset("assets/image/BGBook.png"),
             ),
             Center(
               child: Image.asset("assets/image/Biboo1.png"),
@@ -52,4 +50,3 @@ class _SplashState extends State<Splash> {
     );
   }
 }
-

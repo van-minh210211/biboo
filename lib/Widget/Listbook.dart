@@ -9,11 +9,12 @@ class Listbook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: getProportionateScreenHeight(270),
+    return SizedBox(
+      height: getProportionateScreenWidth(280),
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           // padding: EdgeInsets.only(left: 4),
+          shrinkWrap: true,
           itemCount: 16,
           itemBuilder: (context, index) {
             return Custombook();

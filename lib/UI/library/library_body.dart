@@ -40,8 +40,8 @@ class _libraryBookState extends State<libraryBook>
         child: Column(
           children: [
             Container(
-              height: getProportionateScreenWidth(160),
-              width: getProportionateScreenWidth(330),
+              height: getProportionateScreenWidth(157),
+              width: double.infinity,
               decoration: BoxDecoration(
                   color: Color(0xffFCFCFC),
                   borderRadius: BorderRadius.circular(12)),
@@ -51,7 +51,7 @@ class _libraryBookState extends State<libraryBook>
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 20,
-                      top: 30,
+                      top: 20,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,14 +59,14 @@ class _libraryBookState extends State<libraryBook>
                         Text(
                           "Mục tiêu đọc sách",
                           style: TextStyle(
-                              fontSize: getProportionateScreenWidth(17),
+                              fontSize: 17,
                               letterSpacing: 0.25,
                               fontFamily: "bold",
                               fontWeight: FontWeight.w700,
                               color: Color(0xff262338)),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: getProportionateScreenWidth(5),
                         ),
                         Text(
                           "Trang sách đã đọc\ntrong ngày hôm nay",
@@ -74,18 +74,18 @@ class _libraryBookState extends State<libraryBook>
                           style: TextStyle(
                               height: 1.5,
                               fontFamily: 'Regular',
-                              fontSize: getProportionateScreenWidth(13),
+                              fontSize: 13,
                               fontStyle: FontStyle.normal,
                               fontWeight: FontWeight.w400,
                               color: Color(0xff6E7191),
                               letterSpacing: 0.25),
                         ),
                         SizedBox(
-                          height: 16,
+                          height: getProportionateScreenWidth(16),
                         ),
                         Container(
-                          width: getProportionateScreenWidth(150),
-                          height: getProportionateScreenWidth(38),
+                          width: getProportionateScreenWidth(144),
+                          height: getProportionateScreenWidth(37.77),
                           decoration: BoxDecoration(
                               color: Color(0xffF7F2FF),
                               borderRadius: BorderRadius.circular(85)),
@@ -96,7 +96,7 @@ class _libraryBookState extends State<libraryBook>
                                   color: Color(0xff6E7191),
                                   letterSpacing: 0.22,
                                   fontWeight: FontWeight.w400,
-                                  fontSize: getProportionateScreenWidth(11),
+                                  fontSize: 11,
                                   fontFamily: "Regular"),
                             ),
                           ),
@@ -108,7 +108,7 @@ class _libraryBookState extends State<libraryBook>
                     padding: const EdgeInsets.only(right: 20),
                     child: CircularPercentIndicator(
                       backgroundColor: Palette.input,
-                      radius: 155,
+                      radius: 120,
                       lineWidth: 10,
                       animation: true,
                       linearGradient: LinearGradient(
@@ -133,78 +133,79 @@ class _libraryBookState extends State<libraryBook>
             SizedBox(
               height: 39,
             ),
-            Container(
-              width: getProportionateScreenWidth(327),
-              height: getProportionateScreenWidth(42),
-              decoration: BoxDecoration(
-                color: Color(0xffF1F1FB),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(5),
-                child: TabBar(
-                  unselectedLabelColor: Color(0xff6E7191),
-                  controller: _tab1,
-                  labelColor: Color(0xff14142B),
-                  indicatorWeight: 2,
-                  indicator: BoxDecoration(
-                      color: Color(0xffFFFFFF),
-                      borderRadius: BorderRadius.circular(8)),
-                  tabs: [
-                    Tab(
-                      child: Text(
-                        "SÁCH ĐÃ MỞ KHOÁ",
-                        style: TextStyle(
-                            height: 1.5,
-                            letterSpacing: 0.25,
-                            fontFamily: "Medium",
-                            fontSize: getProportionateScreenWidth(13)),
-                        textAlign: TextAlign.center,
+            SingleChildScrollView(
+              child: Container(
+                width: double.infinity,
+                height: getProportionateScreenWidth(42),
+                decoration: BoxDecoration(
+                  color: Color(0xffF1F1FB),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(5),
+                  child: TabBar(
+                    unselectedLabelColor: Color(0xff6E7191),
+                    controller: _tab1,
+                    labelColor: Color(0xff14142B),
+                    indicatorWeight: 2,
+                    indicator: BoxDecoration(
+                        color: Color(0xffFFFFFF),
+                        borderRadius: BorderRadius.circular(8)),
+                    tabs: [
+                      Tab(
+                        child: Text(
+                          "SÁCH ĐÃ MỞ KHOÁ",
+                          style: TextStyle(
+                              letterSpacing: 0.25,
+                              fontFamily: "Medium",
+                              fontSize: getProportionateScreenWidth(13)),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                    ),
-                    Tab(
-                      child: Text(
-                        "SÁCH QUAN TÂM",
-                        style: TextStyle(
-                            height: 1.5,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "Medium",
-                            fontSize: getProportionateScreenWidth(13),
-                            letterSpacing: 0.25),
+                      Tab(
+                        child: Text(
+                          "SÁCH QUAN TÂM",
+                          style: TextStyle(
+                              height: 1.5,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: "Medium",
+                              fontSize: 13,
+                              letterSpacing: 0.25),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
             SizedBox(
               height: 36,
             ),
-            // Container(
-            //   height: getProportionateScreenWidth(43),
-            //   width: getProportionateScreenWidth(327),
-            //   padding: EdgeInsets.symmetric(
-            //     horizontal: 30,
-            //   ),
-            //   decoration: BoxDecoration(
-            //       color: Color(0xffEFF0F6),
-            //       borderRadius: BorderRadius.circular(10)),
-            //   child: TextField(
-            //     decoration: InputDecoration(
-            //         hintText: "Tìm kiếm sách",
-            //         hintStyle: TextStyle(
-            //           fontFamily: 'Regular',
-            //           letterSpacing: 0.75,
-            //           color: Color(0xff6E7191),
-            //           fontSize: getProportionateScreenWidth(17),
-            //         ),
-            //         icon: Assets.icons.search.svg(
-            //             height: getProportionateScreenWidth(16),
-            //             width: getProportionateScreenWidth(16)),
-            //         border: InputBorder.none),
-            //   ),
-            // ),
-            SizedBox(height: 24),
+            Container(
+              height: getProportionateScreenWidth(43),
+              width: getProportionateScreenWidth(327),
+              padding: EdgeInsets.symmetric(
+                horizontal: 30,
+              ),
+              decoration: BoxDecoration(
+                  color: Color(0xffEFF0F6),
+                  borderRadius: BorderRadius.circular(10)),
+              child: TextField(
+                decoration: InputDecoration(
+                    hintText: "Tìm kiếm sách",
+                    hintStyle: TextStyle(
+                      fontFamily: 'Regular',
+                      letterSpacing: 0.75,
+                      color: Color(0xff6E7191),
+                      fontSize: getProportionateScreenWidth(17),
+                    ),
+                    icon: Assets.icons.search.svg(
+                        height: getProportionateScreenWidth(16),
+                        width: getProportionateScreenWidth(16)),
+                    border: InputBorder.none),
+              ),
+            ),
+            SizedBox(height: 30),
             Expanded(
               child: Container(
                 child: TabBarView(

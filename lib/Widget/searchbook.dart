@@ -13,9 +13,11 @@ class Searchbook extends StatefulWidget {
 class _SearchbookState extends State<Searchbook> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Container(
-      width: getProportionateScreenHeight(327),
-      height: getProportionateScreenHeight(40),
+      margin: EdgeInsets.only(left: 24, right: 24),
+      width: double.infinity,
+      height: getProportionateScreenWidth(40),
       // margin: EdgeInsets.only(left: 24, right: 24.5),
       padding: EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
@@ -30,8 +32,8 @@ class _SearchbookState extends State<Searchbook> {
                   fontSize: 17,
                   color: Color(0xff6E7191)),
               icon: Assets.icons.search.svg(
-                  width: getProportionateScreenHeight(16),
-                  height: getProportionateScreenHeight(16)),
+                  width: getProportionateScreenWidth(16),
+                  height: getProportionateScreenWidth(16)),
               border: InputBorder.none),
         ),
       ),

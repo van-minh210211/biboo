@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SizeConfig {
   static late MediaQueryData _mediaQueryData;
@@ -22,6 +23,7 @@ double? getProportionateScreenHeight(double? inputHeight) {
   if (inputHeight != null) {
     return (inputHeight / 812.0) * screenHeight;
   }
+  // return (inputHeight ?? 0).sh;
 }
 
 // Get the proportionate height as per screen size
@@ -31,4 +33,6 @@ double? getProportionateScreenWidth(double? inputWidth) {
   if (inputWidth != null) {
     return (inputWidth / 375.0) * screenWidth;
   }
+
+  // return (inputWidth ?? 0).sw;
 }

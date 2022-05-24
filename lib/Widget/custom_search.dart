@@ -15,19 +15,19 @@ class _SearchState extends State<Search> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Container(
-      width: getProportionateScreenWidth(327),
+      width: double.infinity,
       height: getProportionateScreenWidth(40),
-      padding: EdgeInsets.symmetric(
-        horizontal: 18,
-      ),
+      padding: EdgeInsets.only(left: 16),
       decoration: BoxDecoration(
           color: Palette.input, borderRadius: BorderRadius.circular(10)),
-      child: TextField(
-        decoration: InputDecoration(
-            hintText: "Tìm kiếm chủ đề",
-            hintStyle: TextStyle(fontFamily: 'Regular', fontSize: 17),
-            icon: Assets.icons.search.svg(),
-            border: InputBorder.none),
+      child: Center(
+        child: TextField(
+          decoration: InputDecoration(
+              hintText: "Tìm kiếm chủ đề",
+              hintStyle: TextStyle(fontFamily: 'Regular', fontSize: 17),
+              icon: Assets.icons.search.svg(),
+              border: InputBorder.none),
+        ),
       ),
     );
   }

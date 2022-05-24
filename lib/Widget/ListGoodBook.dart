@@ -9,10 +9,11 @@ class ListGoodbook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: getProportionateScreenHeight(310),
+    return SizedBox(
+      height: getProportionateScreenWidth(280),
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
           itemCount: 5,
           itemBuilder: (context, index) => CustomListGoodBook()),
     );

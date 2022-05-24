@@ -32,6 +32,7 @@ class _BottomState extends State<Bottom> {
             unselectedLabelStyle: TextStyle(fontFamily: "Regular"),
             unselectedFontSize: 13,
             selectedFontSize: 13,
+            elevation: 100,
             backgroundColor: Color(0xffFCFCFC),
             currentIndex: selec,
             selectedItemColor: Color(0xff3D40C6),

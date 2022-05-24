@@ -1,5 +1,6 @@
 import 'package:biboo/UI/Home/all.dart';
 import 'package:biboo/size_config.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../config/Palette.dart';
@@ -11,16 +12,15 @@ class listunlockedBook extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Container(
-      // color: Color(0xffE5E5E5),
-      // height: getProportionateScreenWidth(145),
+      height: getProportionateScreenHeight(200),
       // width: getProportionateScreenWidth(110),
       child: GridView.count(
         crossAxisCount: 3,
         padding: EdgeInsets.zero,
         mainAxisSpacing: 20,
         crossAxisSpacing: 20,
-        childAspectRatio: 0.5,
-        children: List.generate(12, (index) => listall()),
+        childAspectRatio: 0.4,
+        children: List.generate(31, (index) => listall()),
       ),
     );
   }
@@ -39,11 +39,11 @@ class listall extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(6),
-          child: Image.asset(
-            "assets/image/imageBook.png",
-            height: getProportionateScreenWidth(145),
-            width: getProportionateScreenWidth(96),
-            fit: BoxFit.cover,
+          child: CachedNetworkImage(
+            imageUrl:
+                "https://i2.wp.com/media.designs.vn/public/media/media/picture/30-07-2013/bia_sach_dep_thiet_ke_bia_sach_34.jpg",
+            // width: double.infinity,
+            // fit: BoxFit.cover,
           ),
         ),
         SizedBox(
@@ -55,7 +55,7 @@ class listall extends StatelessWidget {
               height: 1.1,
               fontFamily: 'Bold',
               letterSpacing: 0.25,
-              fontSize: getProportionateScreenWidth(13)),
+              fontSize: 13),
           // textAlign: TextAlign.center,
           maxLines: 2,
           // style: McFont.textXSmallBold.ash,
