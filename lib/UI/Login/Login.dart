@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biboo/UI/Login/Registration.dart';
+import 'package:biboo/UI/Selection/Selection.dart';
 import 'package:biboo/Widget/BackgroupImage.dart';
 import 'package:biboo/UI/Login/LoginBizbook.dart';
 import 'package:biboo/config/BiString.dart';

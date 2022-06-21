@@ -1,6 +1,7 @@
 import 'package:biboo/Widget/Listbook.dart';
 import 'package:biboo/Widget/listTheMost.dart';
 import 'package:biboo/config/Palette.dart';
+import 'package:biboo/size_config.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -192,38 +193,45 @@ class Listdetail extends StatefulWidget {
 }
 
 class _ListdetailState extends State<Listdetail> {
+  late ScrollController _scrollController;
+
   List<Widget> slide1 = [
     Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 4),
-      child: Image.asset(
-        "assets/image/slide.png",
-        // width: 430,
-        // height: 168,
-        fit: BoxFit.fitWidth,
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(4),
+        child: Image.asset(
+          "assets/image/slide.png",
+          width: 327,
+          height: 192,
+          fit: BoxFit.cover,
+        ),
       ),
     ),
     Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(4),
         child: Image.asset(
-          "assets/image/slide.png",
-          // width: 430,
-          // height: 168,
-          fit: BoxFit.fitWidth,
-        )),
+          "assets/image/slide1.png",
+          width: 327,
+          height: 192,
+          fit: BoxFit.cover,
+        ),
+      ),
+    ),
     Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(4),
         child: Image.asset(
-          "assets/image/slide.png",
-          // width: 430,
-          // height: 168,
-        )),
-    Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 4),
-        child: Image.asset(
-          "assets/image/slide.png",
-          // width: 430,
-          // height: 168,
-        )),
+          "assets/image/slide1.png",
+          width: 327,
+          height: 192,
+          fit: BoxFit.cover,
+        ),
+      ),
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -248,21 +256,26 @@ class _ListdetailState extends State<Listdetail> {
               SizedBox(
                 height: 23,
               ),
-              CarouselSlider.builder(
+              CarouselSlider(
+                items: slide1,
+                // [
+                //   Container(
+                //     margin: EdgeInsets.symmetric(horizontal: 14),
+                //     decoration: BoxDecoration(
+                //         image: DecorationImage(
+                //             image: AssetImage("assets/image/slide.png",))),
+                //   )
+                // ],
                 options: CarouselOptions(
-                  autoPlay: true,
-                  enlargeCenterPage: true,
-                  aspectRatio: 2.0,
-                  viewportFraction: 0.9,
-                ),
-                itemCount: slide1.length,
-                itemBuilder: (BuildContext context, int index, int realIndex) {
-                  return Container(
                     height: 190,
-                    width: MediaQuery.of(context).size.width,
-                    child: slide1[index],
-                  );
-                },
+                    autoPlay: true,
+                    // autoPlayCurve: Curves.ease,
+                    // // aspectRatio: 23,
+                    // viewportFraction: 0.94,
+                    enlargeStrategy: CenterPageEnlargeStrategy.height,
+                    // aspectRatio: 15 / 9,
+                    viewportFraction: getProportionateScreenWidth(0.94)!,
+                    enableInfiniteScroll: true),
               ),
               SizedBox(
                 height: 34,
@@ -310,20 +323,23 @@ class _ListdetailState extends State<Listdetail> {
               SizedBox(
                 height: 24,
               ),
-
               Container(
                   padding: EdgeInsets.only(left: 24), child: listTheMost()),
               SizedBox(
                 height: 12,
               ),
-              Text(
-                "Tất cả cá sách",
-                style: TextStyle(fontFamily: "Bold", fontSize: 20),
+              Container(
+                padding: EdgeInsets.only(left: 24),
+                child: Text(
+                  "Tất cả cá sách",
+                  style: TextStyle(fontFamily: "Bold", fontSize: 20),
+                ),
               ),
               SizedBox(
                 height: 12,
               ),
-              // listunlockedBook()
+              Container(
+                  padding: EdgeInsets.only(left: 24), child: listunlockedBook())
             ],
           ),
         ),

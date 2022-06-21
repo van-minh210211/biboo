@@ -231,11 +231,11 @@ class _RegistrationState extends State<Registration> {
                                     ),
                                     TextButton(
                                         onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      LoginBizbook()));
+                                          // Navigator.push(
+                                          //     context,
+                                          //     MaterialPageRoute(
+                                          //         builder: (context) =>
+                                          //             LoginBizbook(widget.)));
                                         },
                                         child: Text(
                                           TextString.login,

@@ -35,4 +35,6 @@ class TextString {
   static String NewPassWord = "Mật Khẩu mới";
   static String content3 = "Nhập vào mật khẩu mới khác với mật khẩu\ntrước đây của bạn. ";
   static String createnewpasss = "TẠO MẬT KHẨU MỚI";
+
+  static String nullValue ='';
 }

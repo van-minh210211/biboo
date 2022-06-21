@@ -273,6 +273,8 @@ class $AssetsIconsGen {
   SvgGenImage get Play => const SvgGenImage("assets/icons/Play.svg");
   SvgGenImage get ph => const SvgGenImage("assets/icons/ph.svg");
   SvgGenImage get Lock => const SvgGenImage("assets/icons/Lock.svg");
+  SvgGenImage get cardw => const SvgGenImage("assets/icons/Cart.w.svg");
+   SvgGenImage get icons => const SvgGenImage("assets/icons/icon.svg");
 }
 
 class $AssetsImagesGen {
@@ -286,6 +288,7 @@ class $AssetsImagesGen {
   AssetGenImage get acb => const AssetGenImage('assets/images/acb.png');
   AssetGenImage get amImage1 =>
       const AssetGenImage('assets/images/am_image_1.png');
+      AssetGenImage get cardw => const AssetGenImage('assets/icons/Cart.w.svg');
   AssetGenImage get card => const AssetGenImage('assets/icons/Cart.svg');
   AssetGenImage get sHow1 => const AssetGenImage('assets/icons/sHow1.svg');
   AssetGenImage get icApple => const AssetGenImage('assets/icons/ic_apple.svg');
@@ -296,6 +299,7 @@ class $AssetsImagesGen {
   AssetGenImage get back => const AssetGenImage('assets/images/back.png');
   AssetGenImage get sHow => const AssetGenImage('assets/icons/show.svg');
   AssetGenImage get book => const AssetGenImage('assets/icons/book.svg');
+  AssetGenImage get icons => const AssetGenImage('assets/icons/icon.svg');
   AssetGenImage get down => const AssetGenImage('assets/icons/down.svg');
   AssetGenImage get Play => const AssetGenImage('assets/icons/Play.svg');
   AssetGenImage get ph => const AssetGenImage('assets/icons/ph.svg');

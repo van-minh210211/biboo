@@ -33,96 +33,104 @@ class _Intro_DetailState extends State<Intro_Detail>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: DefaultTabController(
-          length: 2,
-          child: NestedScrollView(
-              physics: NeverScrollableScrollPhysics(),
-              headerSliverBuilder: (context, isScolled) {
-                return [
-                  SliverAppBar(
-                    collapsedHeight: 620,
-                    expandedHeight: 60,
-                    flexibleSpace: Detail(),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: ExactAssetImage("assets/image/png4.png"),
+                fit: BoxFit.cover),
+          ),
+          child: DefaultTabController(
+            length: 2,
+            child: NestedScrollView(
+                physics: NeverScrollableScrollPhysics(),
+                headerSliverBuilder: (context, isScolled) {
+                  return [
+                    SliverAppBar(
+                      collapsedHeight: 580,
+                      expandedHeight: 560,
+                      flexibleSpace: Detail(),
+                    ),
+                    SliverPersistentHeader(
+                      delegate: MyDelegate(TabBar(
+                        labelPadding: const EdgeInsets.symmetric(
+                          vertical: 7,
+                          horizontal: 18,
+                        ),
+                        automaticIndicatorColorAdjustment: false,
+                        indicatorColor: Colors.transparent,
+                        indicatorSize: TabBarIndicatorSize.tab,
+                        isScrollable: true,
+                        controller: _controller,
+                        labelColor: Color(0xff262338),
+                        unselectedLabelColor: Color(0xffA0A3BD),
+                        onTap: (int index) {
+                          setState(() {
+                            _index = index;
+                          });
+                        },
+                        tabs: [
+                          Tab(
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Giới thiệu',
+                                  style: TextStyle(
+                                      fontSize: 20, fontFamily: 'Bold'),
+                                ),
+                                SizedBox(
+                                  height: 6,
+                                ),
+                                Container(
+                                  height: 4,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                      color: _index == 0
+                                          ? Color(0xff3D40C6)
+                                          : Colors.transparent,
+                                      borderRadius: BorderRadius.circular(4)),
+                                )
+                              ],
+                            ),
+                          ),
+                          Tab(
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Đánh giá',
+                                  style: TextStyle(
+                                      fontSize: 20, fontFamily: 'Bold'),
+                                ),
+                                SizedBox(
+                                  height: 6,
+                                ),
+                                Container(
+                                  height: 4,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                      color: _index == 1
+                                          ? Color(0xff3D40C6)
+                                          : Colors.transparent,
+                                      borderRadius: BorderRadius.circular(4)),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      )),
+                      floating: true,
+                      pinned: true,
+                    )
+                  ];
+                },
+                body: Container(
+                  child: Container(
+                    child: TabBarView(controller: _controller, children: [
+                      Introduce(),
+                      Introduce(),
+                    ]),
                   ),
-                  SliverPersistentHeader(
-                    delegate: MyDelegate(TabBar(
-                      labelPadding: const EdgeInsets.symmetric(
-                        vertical: 7,
-                        horizontal: 18,
-                      ),
-                      automaticIndicatorColorAdjustment: false,
-                      indicatorColor: Colors.transparent,
-                      indicatorSize: TabBarIndicatorSize.tab,
-                      isScrollable: true,
-                      controller: _controller,
-                      labelColor: Color(0xff262338),
-                      unselectedLabelColor: Color(0xffA0A3BD),
-                      onTap: (int index) {
-                        setState(() {
-                          _index = index;
-                        });
-                      },
-                      tabs: [
-                        Tab(
-                          child: Column(
-                            children: [
-                              Text(
-                                'Giới thiệu',
-                                style:
-                                    TextStyle(fontSize: 20, fontFamily: 'Bold'),
-                              ),
-                              SizedBox(
-                                height: 6,
-                              ),
-                              Container(
-                                height: 4,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    color: _index == 0
-                                        ? Color(0xff3D40C6)
-                                        : Colors.transparent,
-                                    borderRadius: BorderRadius.circular(4)),
-                              )
-                            ],
-                          ),
-                        ),
-                        Tab(
-                          child: Column(
-                            children: [
-                              Text(
-                                'Đánh giá',
-                                style:
-                                    TextStyle(fontSize: 20, fontFamily: 'Bold'),
-                              ),
-                              SizedBox(
-                                height: 6,
-                              ),
-                              Container(
-                                height: 4,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    color: _index == 1
-                                        ? Color(0xff3D40C6)
-                                        : Colors.transparent,
-                                    borderRadius: BorderRadius.circular(4)),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    )),
-                    floating: true,
-                    pinned: true,
-                  )
-                ];
-              },
-              body: Container(
-                child: Container(
-                  child: TabBarView(
-                      controller: _controller,
-                      children: [Introduce(), Text("asdf")]),
-                ),
-              )),
+                )),
+          ),
         ),
       ),
     );
@@ -141,7 +149,7 @@ class MyDelegate extends SliverPersistentHeaderDelegate {
       color: Colors.transparent,
       child: Container(
           decoration: BoxDecoration(
-              color: Colors.amber,
+              color: Color(0xffFFFFFF),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(12), topRight: Radius.circular(12))),
           child: tabBar),

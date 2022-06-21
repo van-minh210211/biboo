@@ -10,17 +10,25 @@ class listunlockedBook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     return Container(
-      height: getProportionateScreenHeight(200),
+      height: getProportionateScreenHeight(600),
       // width: getProportionateScreenWidth(110),
-      child: GridView.count(
-        crossAxisCount: 3,
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          childAspectRatio: 0.48,
+        ),
         padding: EdgeInsets.zero,
-        mainAxisSpacing: 20,
-        crossAxisSpacing: 20,
-        childAspectRatio: 0.4,
-        children: List.generate(31, (index) => listall()),
+        scrollDirection: Axis.vertical,
+        physics: const ScrollPhysics(),
+        shrinkWrap: true,
+        itemBuilder: (BuildContext context, int index) {
+          return new Column(
+            children: [
+              listall(),
+            ],
+          );
+        },
       ),
     );
   }
@@ -32,7 +40,7 @@ class listall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // margin: EdgeInsets.only(left: 12, right: 12),
+      margin: const EdgeInsets.only(right: 12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(3),
       ),

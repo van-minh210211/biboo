@@ -1,3 +1,4 @@
+import 'package:biboo/Widget/ListGoodBook.dart';
 import 'package:biboo/Widget/Listbook.dart';
 import 'package:biboo/gen/assets.gen.dart';
 import 'package:biboo/size_config.dart';
@@ -121,7 +122,7 @@ class _IntroduceState extends State<Introduce> {
                     // ),
 
                     ReadMoreText(
-                      'The war against Voldemor is not going well, even the Muggles have been affecte Dumbledore is absent from Hogwarts for long stretc hes of time,  and the Order of the Phoenix has ALread asdfawefasdfaewfasdfaMinhd'
+                      'The war against Voldemor is not going well, even the Muggles have been affected. Dumbledore is absent from Hogwarts for long stretc hes of time,  and the Order of the Phoenix has aLreadlk asdfawefasdfaewfasdfaMinhd'
                       'The war against Voldemor is not going well, even the Muggles have been affecte Dumbledore is absent from Hogwarts for long stretc hes of time,  and the Order of the Phoenix has ALread asdfawefasdfaewfasdfaMinhd'
                       'The war against Voldemor is not going well, even the Muggles have been affecte Dumbledore is absent from Hogwarts for long stretc hes of time,  and the Order of the Phoenix has ALread asdfawefasdfaewfasdfaMinhd'
                       'The war against Voldemor is not going well, even the Muggles have been affecte Dumbledore is absent from Hogwarts for long stretc hes of time,  and the Order of the Phoenix has ALread asdfawefasdfaewfasdfaMinhd'
@@ -144,7 +145,7 @@ class _IntroduceState extends State<Introduce> {
                           color: Color(0xff4E4B66)),
                       moreStyle: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: 14,
+                          fontSize: 13,
                           color: Color(0xff00C7FF),
                           fontWeight: FontWeight.w600,
                           fontFamily: "SemiBold"),
@@ -161,11 +162,11 @@ class _IntroduceState extends State<Introduce> {
                         iconColor: Color(0xff262338),
                         tilePadding: EdgeInsets.zero,
                         title: Text(
-                          "Chương 01: Bàn về kế hoạch cuộc sống trong.",
+                          "Chương 01: Bàn về kế hoạch cuộc sống tr.",
                           maxLines: 1,
                           style: TextStyle(
                               overflow: TextOverflow.ellipsis,
-                              fontSize: 15,
+                              fontSize: 14,
                               fontFamily: "Bold",
                               color: Color(0xff262338)),
                         ),
@@ -203,64 +204,70 @@ class _IntroduceState extends State<Introduce> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: getProportionateScreenWidth(20),
+                                  height: 20,
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(left: 16),
+                                  padding: const EdgeInsets.only(
+                                      left: 16, right: 32),
                                   child: Row(
                                     children: [
-                                      Container(
-                                        width: 121,
-                                        height: 40,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(24),
-                                            border: Border.all(
-                                                color: Color(0xff00C7FF),
-                                                width: 2)),
-                                        child: Center(
-                                            child: Text(
-                                          "Đọc Ebook",
-                                          style: TextStyle(
-                                              letterSpacing: 0.25,
-                                              fontSize: 13,
-                                              fontFamily: "Bold",
-                                              color: Color(0xff007099)),
-                                        )),
+                                      Expanded(
+                                        child: Container(
+                                          width: double.infinity,
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(24),
+                                              border: Border.all(
+                                                  color: Color(0xff00C7FF),
+                                                  width: 2)),
+                                          child: Center(
+                                              child: Text(
+                                            "Đọc Ebook",
+                                            style: TextStyle(
+                                                letterSpacing: 0.25,
+                                                fontSize: 13,
+                                                fontFamily: "Bold",
+                                                color: Color(0xff007099)),
+                                          )),
+                                        ),
                                       ),
                                       SizedBox(
                                         width: getProportionateScreenWidth(12),
                                       ),
-                                      Container(
-                                        width: getProportionateScreenWidth(145),
-                                        height: 40,
-                                        decoration: BoxDecoration(
-                                          color: Color(0xff3D40C6),
-                                          borderRadius:
-                                              BorderRadius.circular(24),
-                                        ),
-                                        child: Row(
-                                          children: [
-                                            SizedBox(
-                                              width: 22,
-                                            ),
-                                            InkWell(
-                                                onTap: () {
-                                                  print("adf");
-                                                },
-                                                child: Assets.icons.Play.svg()),
-                                            SizedBox(
-                                              width: 12,
-                                            ),
-                                            Text(
-                                              "Nghe Audio",
-                                              style: TextStyle(
-                                                  letterSpacing: 0.25,
-                                                  fontSize: 13,
-                                                  fontFamily: "Bold",
-                                                  color: Color(0xffFCFCFC)),
-                                            )
-                                          ],
+                                      Expanded(
+                                        child: Container(
+                                          width: double.infinity,
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xff3D40C6),
+                                            borderRadius:
+                                                BorderRadius.circular(24),
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              SizedBox(
+                                                width: 15,
+                                              ),
+                                              InkWell(
+                                                  onTap: () {
+                                                    print("adf");
+                                                  },
+                                                  child:
+                                                      Assets.icons.Play.svg()),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              Text(
+                                                "Nghe Audio",
+                                                style: TextStyle(
+                                                    letterSpacing: 0.25,
+                                                    fontSize: 13,
+                                                    fontFamily: "Bold",
+                                                    color: Color(0xffFCFCFC)),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -297,7 +304,7 @@ class _IntroduceState extends State<Introduce> {
                                         width: 8,
                                       ),
                                       SizedBox(
-                                        width: getProportionateScreenWidth(250),
+                                        width: getProportionateScreenWidth(270),
                                         child: Text(
                                           "Đoạn 02: Bàn về kế hoạch cuộc đời và cách kiến tạo lên bản đánh giá chất lượng công việc",
                                           style: TextStyle(
@@ -313,64 +320,73 @@ class _IntroduceState extends State<Introduce> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: getProportionateScreenWidth(25),
+                                  height: 25,
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(left: 16),
+                                  margin: EdgeInsets.only(left: 16, right: 33),
                                   child: Row(
                                     children: [
-                                      Container(
-                                        width: 121,
-                                        height: 40,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(24),
-                                            border: Border.all(
-                                                color: Color(0xff00C7FF),
-                                                width: 2)),
-                                        child: Center(
-                                            child: Text(
-                                          "Đọc Ebook",
-                                          style: TextStyle(
-                                              letterSpacing: 0.25,
-                                              fontSize: 13,
-                                              fontFamily: "Bold",
-                                              color: Color(0xff007099)),
-                                        )),
+                                      Expanded(
+                                        child: Container(
+                                          width:
+                                              getProportionateScreenWidth(121),
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(24),
+                                              border: Border.all(
+                                                  color: Color(0xff00C7FF),
+                                                  width: 2)),
+                                          child: Center(
+                                              child: Text(
+                                            "Đọc Ebook",
+                                            style: TextStyle(
+                                                letterSpacing: 0.25,
+                                                fontSize: 13,
+                                                fontFamily: "Bold",
+                                                color: Color(0xff007099)),
+                                          )),
+                                        ),
                                       ),
                                       SizedBox(
                                         width: getProportionateScreenWidth(12),
                                       ),
-                                      Container(
-                                        width: getProportionateScreenWidth(145),
-                                        height: 40,
-                                        decoration: BoxDecoration(
-                                          color: Color(0xff3D40C6),
-                                          borderRadius:
-                                              BorderRadius.circular(24),
-                                        ),
-                                        child: Row(
-                                          children: [
-                                            SizedBox(
-                                              width: 22,
-                                            ),
-                                            InkWell(
-                                                onTap: () {
-                                                  print("adf");
-                                                },
-                                                child: Assets.icons.Play.svg()),
-                                            SizedBox(
-                                              width: 12,
-                                            ),
-                                            Text(
-                                              "Nghe Audio",
-                                              style: TextStyle(
-                                                  letterSpacing: 0.25,
-                                                  fontSize: 13,
-                                                  fontFamily: "Bold",
-                                                  color: Color(0xffFCFCFC)),
-                                            )
-                                          ],
+                                      Expanded(
+                                        child: Container(
+                                          width:
+                                              getProportionateScreenWidth(145),
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xff3D40C6),
+                                            borderRadius:
+                                                BorderRadius.circular(24),
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              SizedBox(
+                                                width:
+                                                    getProportionateScreenWidth(
+                                                        15),
+                                              ),
+                                              InkWell(
+                                                  onTap: () {
+                                                    print("adf");
+                                                  },
+                                                  child:
+                                                      Assets.icons.Play.svg()),
+                                              SizedBox(
+                                                width: 12,
+                                              ),
+                                              Text(
+                                                "Nghe Audio",
+                                                style: TextStyle(
+                                                    letterSpacing: 0.25,
+                                                    fontSize: 13,
+                                                    fontFamily: "Bold",
+                                                    color: Color(0xffFCFCFC)),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -413,10 +429,10 @@ class _IntroduceState extends State<Introduce> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: getProportionateScreenWidth(25),
+                                  height: getProportionateScreenWidth(22),
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(left: 16),
+                                  margin: EdgeInsets.only(left: 28, right: 29),
                                   child: Row(
                                     children: [
                                       Text(
@@ -427,7 +443,7 @@ class _IntroduceState extends State<Introduce> {
                                             fontFamily: "Bold"),
                                       ),
                                       SizedBox(
-                                        width: 20,
+                                        width: getProportionateScreenWidth(20),
                                       ),
                                       Container(
                                         width: getProportionateScreenWidth(145),
@@ -442,8 +458,8 @@ class _IntroduceState extends State<Introduce> {
                                             SizedBox(
                                               width: 22,
                                             ),
-                                            Assets.icons.card
-                                                .svg(width: 13, height: 13),
+                                            Assets.icons.cardw
+                                                .svg(width: 16, height: 16),
                                             SizedBox(
                                               width: 12,
                                             ),
@@ -1314,7 +1330,7 @@ class _IntroduceState extends State<Introduce> {
                         iconColor: Color(0xff262338),
                         tilePadding: EdgeInsets.zero,
                         title: Text(
-                          "Chương 03: bàn về ý thức nguy cấp trong bádf",
+                          "Chương 03: Bàn về ý thức nguy cấp trong bádf",
                           maxLines: 1,
                           style: TextStyle(
                               overflow: TextOverflow.ellipsis,
@@ -2483,7 +2499,8 @@ class _IntroduceState extends State<Introduce> {
               SizedBox(
                 height: 24,
               ),
-              Container(margin: EdgeInsets.only(left: 24), child: Listbook())
+              // Container(
+              //     margin: EdgeInsets.only(left: 24), child: ListGoodbook())
             ],
           ),
         ),

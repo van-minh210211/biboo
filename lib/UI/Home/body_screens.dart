@@ -3,6 +3,9 @@ import 'package:biboo/UI/Selection/Selection.dart';
 import 'package:biboo/Widget/CustomListGoodBook.dart';
 import 'package:biboo/Widget/listTheMost.dart';
 import 'package:biboo/Widget/searchbook.dart';
+import 'package:biboo/api/api_booklist.dart';
+import 'package:biboo/bloc/book/book_cubit.dart';
+import 'package:biboo/bloc/category/category_cubit.dart';
 import 'package:biboo/config/Palette.dart';
 import 'package:biboo/gen/assets.gen.dart';
 import 'package:biboo/model/Categoty.dart';
@@ -10,9 +13,11 @@ import 'package:biboo/model/Categoty.dart';
 import 'package:biboo/size_config.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
@@ -29,121 +34,147 @@ class HomeBody extends StatefulWidget {
 }
 
 class _HomeBodyState extends State<HomeBody> {
+  late BookCubit _listbookCubit;
+  final url = BookService(Dio());
+
+  @override
+  void initState() {
+    super.initState();
+    _listbookCubit = BookCubit(url);
+    _listbookCubit.getListBooks();
+  }
+
+  @override
   List<Widget> slide = [
-    ClipRRect(
-      borderRadius: BorderRadius.circular(4),
-      child: Image.asset(
-        "assets/image/slide.png",
-        width: getProportionateScreenWidth(327),
-        height: 192,
-        fit: BoxFit.cover,
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(4),
+        child: Image.asset(
+          "assets/image/slide.png",
+          width: 327,
+          height: 192,
+          fit: BoxFit.cover,
+        ),
       ),
     ),
-    ClipRRect(
-      borderRadius: BorderRadius.circular(4),
-      child: Image.asset(
-        "assets/image/slide1.png",
-        width: getProportionateScreenWidth(327),
-        height: 192,
-        fit: BoxFit.cover,
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(4),
+        child: Image.asset(
+          "assets/image/slide1.png",
+          width: 327,
+          height: 192,
+          fit: BoxFit.cover,
+        ),
       ),
     ),
-    ClipRRect(
-      borderRadius: BorderRadius.circular(4),
-      child: Image.asset(
-        "assets/image/slide1.png",
-        width: getProportionateScreenWidth(327),
-        height: 192,
-        fit: BoxFit.cover,
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(4),
+        child: Image.asset(
+          "assets/image/slide3.png",
+          width: 327,
+          height: 192,
+          fit: BoxFit.cover,
+        ),
       ),
     ),
   ];
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-
-    return Scaffold(
-      body: Container(
-        // padding: EdgeInsets.only(left: 24),
-        color: Color(0xffF7F7FC),
-        child: SingleChildScrollView(
-          child: Column(children: [
-            SizedBox(
-              height: getProportionateScreenHeight(32),
+    return BlocProvider<BookCubit>(
+      create: (context) => _listbookCubit,
+      child: Scaffold(
+        body: Container(
+          child: Container(
+            color: Color(0xffF7F7FC),
+            child: SingleChildScrollView(
+              child: Column(children: [
+                SizedBox(
+                  height: getProportionateScreenHeight(32),
+                ),
+                Searchbook(),
+                SizedBox(
+                  height: 32,
+                ),
+                List3(),
+                SizedBox(
+                  height: 40,
+                ),
+                List2(context),
+                SizedBox(
+                  height: 40,
+                ),
+                List4(context),
+                SizedBox(height: 40),
+                List5(context),
+                SizedBox(
+                  height: 40,
+                ),
+                List6(context),
+                SizedBox(
+                  height: 40,
+                ),
+                CarouselSlider(
+                  items: slide,
+                  // [
+                  //   Container(
+                  //     margin: EdgeInsets.symmetric(horizontal: 14),
+                  //     decoration: BoxDecoration(
+                  //         image: DecorationImage(
+                  //             image: AssetImage("assets/image/slide.png",))),
+                  //   )
+                  // ],
+                  options: CarouselOptions(
+                      height: 190,
+                      autoPlay: true,
+                      // autoPlayCurve: Curves.ease,
+                      // // aspectRatio: 23,
+                      // viewportFraction: 0.94,
+                      enlargeStrategy: CenterPageEnlargeStrategy.height,
+                      // aspectRatio: 15 / 9,
+                      viewportFraction: getProportionateScreenWidth(0.94)!,
+                      enableInfiniteScroll: true),
+                ),
+                SizedBox(
+                  height: 55,
+                ),
+                List7(context),
+              ]),
             ),
-            Searchbook(),
-            SizedBox(
-              height: 32,
-            ),
-            List3(
-              context,
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            List2(context),
-            SizedBox(
-              height: 40,
-            ),
-            List4(context),
-            SizedBox(height: 40),
-            List5(context),
-            SizedBox(
-              height: 40,
-            ),
-            List6(context),
-            SizedBox(
-              height: 40,
-            ),
-            CarouselSlider(
-              items: slide,
-              // [
-              //   Container(
-              //     margin: EdgeInsets.symmetric(horizontal: 14),
-              //     decoration: BoxDecoration(
-              //         image: DecorationImage(
-              //             image: AssetImage("assets/image/slide.png",))),
-              //   )
-              // ],
-              options: CarouselOptions(
-                  height: getProportionateScreenWidth(190),
-                  autoPlay: true,
-                  // enlargeCenterPage: true,
-                  enlargeStrategy: CenterPageEnlargeStrategy.height,
-                  aspectRatio: 30,
-                  viewportFraction: getProportionateScreenWidth(0.77)!,
-                  enableInfiniteScroll: true),
-            ),
-            SizedBox(
-              height: 55,
-            ),
-            List7(context),
-          ]),
+          ),
         ),
       ),
     );
   }
 }
 
-Container List3(BuildContext context) {
-  return Container(
-    margin: EdgeInsets.only(left: 25),
-    width: double.infinity,
-    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Text(
-        'Gợi ý cho bạn',
-        style: TextStyle(
-            color: Color(0xff262338),
-            fontSize: getProportionateScreenWidth(20),
-            fontFamily: "Bold",
-            fontWeight: FontWeight.w700),
-      ),
-      const SizedBox(
-        height: 24,
-      ),
-      Listbook(),
-    ]),
-  );
+class List3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(left: 25),
+      width: double.infinity,
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Text(
+          'Gợi ý cho bạn',
+          style: TextStyle(
+              color: Color(0xff262338),
+              fontSize: getProportionateScreenWidth(20),
+              fontFamily: "Bold",
+              fontWeight: FontWeight.w700),
+        ),
+        const SizedBox(
+          height: 24,
+        ),
+        Listbook()
+      ]),
+    );
+  }
 }
 
 Container List4(BuildContext context) {
@@ -163,7 +194,8 @@ Container List4(BuildContext context) {
         SizedBox(
           height: 24,
         ),
-        ListGoodbook()
+        // ListGoodbook()
+        Listbook()
       ],
     ),
   );
@@ -227,9 +259,7 @@ Container List6(BuildContext context) {
         Text(
           "Nghe nhiều nhất",
           style: TextStyle(
-              fontFamily: 'Bold',
-              color: Color(0xff262338),
-              fontSize: getProportionateScreenWidth(20)),
+              fontFamily: 'Bold', color: Color(0xff262338), fontSize: 20),
         ),
         listTheMost()
       ],
@@ -284,6 +314,13 @@ Container List2(BuildContext context) {
     height: getProportionateScreenWidth(216),
     width: double.infinity,
     decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Color(0x143D40C6),
+            blurRadius: 40,
+            offset: Offset(0, 12), // changes position of shadow
+          ),
+        ],
         // color: Colors.amber,
         color: Color(0xffFCFCFC),
         borderRadius: BorderRadius.all(Radius.circular(12))),
@@ -299,7 +336,7 @@ Container List2(BuildContext context) {
               child: Image.asset(
                 "assets/image/504.png",
                 width: getProportionateScreenWidth(128),
-                height: getProportionateScreenWidth(192),
+                height: 192,
                 // width: double.infinity,
                 fit: BoxFit.cover,
               ),
@@ -323,7 +360,7 @@ Container List2(BuildContext context) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: getProportionateScreenWidth(30),
+                    height: 30,
                     width: getProportionateScreenWidth(136),
                     decoration: BoxDecoration(
                       color: Color(0xffE5FFF2),
@@ -353,7 +390,7 @@ Container List2(BuildContext context) {
                         ),
                   ),
                   SizedBox(
-                    height: getProportionateScreenWidth(10),
+                    height: getProportionateScreenWidth(9),
                   ),
                   Text(
                     "Barack Obama và sự nghiệp - The Audaci ádkf ",
@@ -428,7 +465,7 @@ Container List2(BuildContext context) {
                     ],
                   ),
                   SizedBox(
-                    height: getProportionateScreenWidth(6),
+                    height: getProportionateScreenWidth(5),
                   ),
                   InkWell(
                     onTap: null,

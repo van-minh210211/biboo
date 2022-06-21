@@ -12,12 +12,7 @@ class listTheMost extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return SizedBox(
-      // child: Container(
-      // margin: EdgeInsets.only(
-      //   right: 23,
-      // ),
-      height: getProportionateScreenWidth(680),
-
+      height: 680,
       child: ListView.builder(
           padding: EdgeInsets.zero,
           physics: NeverScrollableScrollPhysics(),
@@ -40,11 +35,14 @@ class ItemBook extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            "assets/image/504.png",
-            fit: BoxFit.cover,
-            width: getProportionateScreenWidth(128),
-            height: getProportionateScreenWidth(192),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(4),
+            child: Image.asset(
+              "assets/image/504.png",
+              fit: BoxFit.cover,
+              width: getProportionateScreenWidth(128),
+              height: 192,
+            ),
           ),
           SizedBox(
             width: getProportionateScreenWidth(24),
@@ -60,7 +58,7 @@ class ItemBook extends StatelessWidget {
                     children: [
                       Container(
                         height: getProportionateScreenWidth(30),
-                        width: getProportionateScreenWidth(29),
+                        width: 29,
                         decoration: BoxDecoration(
                             color: Color(0xffFF4C4D),
                             borderRadius: BorderRadius.circular(8)),
@@ -81,7 +79,7 @@ class ItemBook extends StatelessWidget {
                       ),
                       Expanded(
                         child: Container(
-                          height: getProportionateScreenWidth(30),
+                          height: 30,
                           width: double.infinity,
                           decoration: BoxDecoration(
                               color: Color(0xffEFF0F7),
@@ -103,7 +101,7 @@ class ItemBook extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: getProportionateScreenWidth(12),
+                    height: 12,
                   ),
                   Text(
                     "Barack Obama và sự nghiệp - The Audaciad àd",
@@ -111,7 +109,7 @@ class ItemBook extends StatelessWidget {
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         overflow: TextOverflow.ellipsis,
-                        height: 1.2,
+                        height: 1.3,
                         fontSize: 17,
                         fontFamily: "Bold",
                         color: Color(0xff262338),
@@ -119,7 +117,7 @@ class ItemBook extends StatelessWidget {
                         fontStyle: FontStyle.normal),
                   ),
                   SizedBox(
-                    height: getProportionateScreenWidth(8),
+                    height: 8,
                   ),
                   Text(
                     "Barack Obama ",
@@ -132,7 +130,7 @@ class ItemBook extends StatelessWidget {
                         fontStyle: FontStyle.normal),
                   ),
                   SizedBox(
-                    height: 9,
+                    height: getProportionateScreenWidth(12),
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -170,13 +168,13 @@ class ItemBook extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(height: getProportionateScreenWidth(12)),
+                  SizedBox(height: 13),
                   InkWell(
                     onTap: () {
                       print("ads");
                     },
                     child: Container(
-                      height: getProportionateScreenWidth(40),
+                      height: 40,
                       width: double.infinity,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),

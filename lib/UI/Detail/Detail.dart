@@ -1,4 +1,6 @@
 import 'package:badges/badges.dart';
+import 'package:biboo/UI/Player/music_player.dart';
+import 'package:biboo/UI/Player/test.dart';
 import 'package:biboo/Widget/ListentheMost.dart';
 import 'package:biboo/gen/assets.gen.dart';
 import 'package:biboo/size_config.dart';
@@ -197,28 +199,34 @@ class _DetailState extends State<Detail> with TickerProviderStateMixin {
               SizedBox(
                 height: getProportionateScreenHeight(12),
               ),
-              Container(
-                width: double.infinity,
-                height: getProportionateScreenHeight(56),
-                margin: EdgeInsets.only(left: 24, right: 24),
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(
-                  horizontal: getProportionateScreenWidth(27)!,
-                ),
-                decoration: BoxDecoration(
-                  color: Color(0xff3D40C6),
-                  borderRadius: BorderRadius.circular(40),
-                ),
-                child: Center(
-                  child: Text(
-                    ("NGHE AUDIO MIỄN PHÍ"),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontFamily: "Bold",
-                        fontSize: 15,
-                        letterSpacing: 0.75,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xffF7F7FC)),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => audio()));
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: getProportionateScreenHeight(56),
+                  margin: EdgeInsets.only(left: 24, right: 24),
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: getProportionateScreenWidth(27)!,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color(0xff3D40C6),
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: Center(
+                    child: Text(
+                      ("NGHE AUDIO MIỄN PHÍ"),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontFamily: "Bold",
+                          fontSize: 15,
+                          letterSpacing: 0.75,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xffF7F7FC)),
+                    ),
                   ),
                 ),
               ),

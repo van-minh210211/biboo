@@ -36,10 +36,11 @@ class _libraryBookState extends State<libraryBook>
     return Scaffold(
       backgroundColor: Color(0xffF7F7FC),
       body: Container(
-        padding: EdgeInsets.only(right: 20, left: 24, top: 39),
+        padding: EdgeInsets.only(right: 15, left: 24, top: 39),
         child: Column(
           children: [
             Container(
+              margin: EdgeInsets.only(right: 10),
               height: getProportionateScreenWidth(157),
               width: double.infinity,
               decoration: BoxDecoration(
@@ -116,8 +117,8 @@ class _libraryBookState extends State<libraryBook>
                             Color(0xff5F2EEA),
                             Color(0xffE359F9),
                           ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter),
+                          begin: Alignment.centerRight,
+                          end: Alignment.centerLeft),
                       circularStrokeCap: CircularStrokeCap.round,
                       animationDuration: 1000,
                       percent: 0.4,
@@ -135,6 +136,7 @@ class _libraryBookState extends State<libraryBook>
             ),
             SingleChildScrollView(
               child: Container(
+                margin: EdgeInsets.only(right: 10),
                 width: double.infinity,
                 height: getProportionateScreenWidth(42),
                 decoration: BoxDecoration(
@@ -182,8 +184,9 @@ class _libraryBookState extends State<libraryBook>
               height: 36,
             ),
             Container(
-              height: getProportionateScreenWidth(43),
-              width: getProportionateScreenWidth(327),
+              margin: EdgeInsets.only(right: 10),
+              height: 43,
+              width: double.infinity,
               padding: EdgeInsets.symmetric(
                 horizontal: 30,
               ),

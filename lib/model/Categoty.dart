@@ -25,8 +25,4 @@ const List<Category1> Data = [
     Title: 'Quản trị nhân sự',
     Imagee: 'assets/icons/icon7-fill.svg',
   ),
-  Category1(
-    Title: 'Vĩ nhân thế giới và các tỷ phú',
-    Imagee: 'assets/icons/icon8.svg',
-  ),
 ];
