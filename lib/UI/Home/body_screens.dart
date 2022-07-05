@@ -92,59 +92,67 @@ class _HomeBodyState extends State<HomeBody> {
         body: Container(
           child: Container(
             color: Color(0xffF7F7FC),
-            child: SingleChildScrollView(
-              child: Column(children: [
-                SizedBox(
-                  height: getProportionateScreenHeight(32),
+            child: Column(
+              children: [
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(children: [
+                      SizedBox(
+                        height: getProportionateScreenHeight(32),
+                      ),
+                      Searchbook(),
+                      SizedBox(
+                        height: 32,
+                      ),
+                      List3(),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      List2(context),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      List4(context),
+                      SizedBox(height: 40),
+                      List5(context),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      List6(context),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      CarouselSlider(
+                        items: slide,
+                        // [
+                        //   Container(
+                        //     margin: EdgeInsets.symmetric(horizontal: 14),
+                        //     decoration: BoxDecoration(
+                        //         image: DecorationImage(
+                        //             image: AssetImage("assets/image/slide.png",))),
+                        //   )
+                        // ],
+                        options: CarouselOptions(
+                            height: 190,
+                            autoPlay: true,
+                            // autoPlayCurve: Curves.ease,
+                            // // aspectRatio: 23,
+                            // viewportFraction: 0.94,
+                            enlargeStrategy: CenterPageEnlargeStrategy.height,
+                            // aspectRatio: 15 / 9,
+                            viewportFraction:
+                                getProportionateScreenWidth(0.94)!,
+                            enableInfiniteScroll: true),
+                      ),
+                      SizedBox(
+                        height: 55,
+                      ),
+                      List7(context),
+                    ]),
+                  ),
                 ),
-                Searchbook(),
-                SizedBox(
-                  height: 32,
-                ),
-                List3(),
-                SizedBox(
-                  height: 40,
-                ),
-                List2(context),
-                SizedBox(
-                  height: 40,
-                ),
-                List4(context),
-                SizedBox(height: 40),
-                List5(context),
-                SizedBox(
-                  height: 40,
-                ),
-                List6(context),
-                SizedBox(
-                  height: 40,
-                ),
-                CarouselSlider(
-                  items: slide,
-                  // [
-                  //   Container(
-                  //     margin: EdgeInsets.symmetric(horizontal: 14),
-                  //     decoration: BoxDecoration(
-                  //         image: DecorationImage(
-                  //             image: AssetImage("assets/image/slide.png",))),
-                  //   )
-                  // ],
-                  options: CarouselOptions(
-                      height: 190,
-                      autoPlay: true,
-                      // autoPlayCurve: Curves.ease,
-                      // // aspectRatio: 23,
-                      // viewportFraction: 0.94,
-                      enlargeStrategy: CenterPageEnlargeStrategy.height,
-                      // aspectRatio: 15 / 9,
-                      viewportFraction: getProportionateScreenWidth(0.94)!,
-                      enableInfiniteScroll: true),
-                ),
-                SizedBox(
-                  height: 55,
-                ),
-                List7(context),
-              ]),
+                ViewSlider()
+              ],
             ),
           ),
         ),

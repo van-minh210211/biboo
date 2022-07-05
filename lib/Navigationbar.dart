@@ -24,7 +24,8 @@ class _BottomState extends State<Bottom> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _widgetOptions[selec],
-      bottomNavigationBar: SizedBox(
+      bottomNavigationBar: 
+      SizedBox(
         height: 80,
         child: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,

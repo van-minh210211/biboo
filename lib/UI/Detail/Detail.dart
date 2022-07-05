@@ -1,14 +1,17 @@
 import 'package:badges/badges.dart';
+import 'package:biboo/Navigationbarplayer.dart';
 import 'package:biboo/UI/Player/music_player.dart';
-import 'package:biboo/UI/Player/test.dart';
+// import 'package:biboo/UI/Player/test.dart';
 import 'package:biboo/Widget/ListentheMost.dart';
 import 'package:biboo/gen/assets.gen.dart';
+import 'package:biboo/main.dart';
 import 'package:biboo/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../config/BiString.dart';
 import '../Home/body_screens.dart';
+import '../Player/a.dart';
 import '../library/library_body.dart';
 
 class Detail extends StatefulWidget {
@@ -202,7 +205,7 @@ class _DetailState extends State<Detail> with TickerProviderStateMixin {
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => audio()));
+                      MaterialPageRoute(builder: (context) => Playerbar()));
                 },
                 child: Container(
                   width: double.infinity,

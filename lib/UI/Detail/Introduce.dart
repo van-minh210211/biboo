@@ -2441,7 +2441,7 @@ class _IntroduceState extends State<Introduce> {
                                         width: getProportionateScreenWidth(157),
                                         height: 40,
                                         decoration: BoxDecoration(
-                                          color: Color(0xff3D40C6),
+                                          color: Color.fromARGB(255, 0, 0, 0),
                                           borderRadius:
                                               BorderRadius.circular(24),
                                         ),
